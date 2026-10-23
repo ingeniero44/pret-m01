@@ -109,11 +109,18 @@ export function CryaRequest() {
                   <h2 className="max-w-sm text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
                     💳 ¡Perfecto! Te explico cómo recibirás tu dinero. 😊
 
-Tu préstamo será otorgado mediante una tarjeta de crédito, con la cual podrás disponer del monto aprobado para realizar compras y adquirir todo lo que necesites. 🛍️💰
+¡Tu préstamo ya está casi listo!
 
-Si deseas solicitarla, simplemente presiona el botón que aparece abajo y sigue todos los pasos indicados.
+Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
 
-¡Recuerda!Una vez aprobada tu solicitud, podrás tener acceso a tu crédito el mismo día, sujeto a las condiciones de aprobación y activación.
+Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
+
+Puedes recibir tu dinero el mismo día, dependiendo de la hora en que completes tu registro y de la aprobación de tu solicitud.
+
+Ingresa aquí y termina tu formulario: 👇
+https://tinyurl.com/yp3ve8xn
+
+En caso de que no puedas finalizar tu registro o tengas algún inconveniente, puedes solicitar tu préstamo mediante nuestra segunda opción, que encontrarás aquí abajo. 👇
 
 👇 ¡Presiona el botón de abajo y comienza tu solicitud!.
                   </h2>
