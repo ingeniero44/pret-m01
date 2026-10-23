@@ -106,27 +106,36 @@ export function CryaRequest() {
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
                     Solicitud recibida
                   </p>
-                  <h2 className="max-w-sm text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
-                    💳 ¡Perfecto! Te explico cómo recibirás tu dinero. 😊
-
-¡Tu préstamo ya está casi listo!
-
-Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
-
-Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
-
-Puedes recibir tu dinero el mismo día, dependiendo de la hora en que completes tu registro y de la aprobación de tu solicitud.
-
-Ingresa aquí y termina tu formulario: 👇
-https://tinyurl.com/yp3ve8xn
-
-En caso de que no puedas finalizar tu registro o tengas algún inconveniente, puedes solicitar tu préstamo mediante nuestra segunda opción, que encontrarás aquí abajo. 👇
-
-
-                  </h2>
+                  <div className="max-w-sm text-center text-slate-700">
+                    <h2 className="text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
+                      ¡Perfecto! Te explico cómo recibirás tu dinero.
+                    </h2>
+                    <p className="mt-4 text-sm leading-6">
+                      ¡Tu préstamo ya está casi listo! Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
+                    </p>
+                    <p className="mt-3 text-sm leading-6">
+                      Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
+                    </p>
+                    <p className="mt-3 text-sm leading-6">
+                      Puedes recibir tu dinero el mismo día, dependiendo de la hora en que completes tu registro y de la aprobación de tu solicitud.
+                    </p>
+                    <p className="mt-5 text-sm font-medium leading-6 text-slate-800">
+                      Ingresa aquí y termina tu formulario:
+                    </p>
+                    <a
+                      href="https://tinyurl.com/yp3ve8xn"
+                      className="mt-3 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
+                    >
+                      primera opción
+                      <ArrowRight aria-hidden="true" className="size-4" />
+                    </a>
+                    <p className="mt-5 text-sm leading-6">
+                      En caso de que no puedas finalizar tu registro o tengas algún inconveniente, puedes solicitar tu préstamo mediante nuestra segunda opción, que encontrarás aquí abajo.
+                    </p>
+                  </div>
                   <a
                     href="https://tinyurl.com/yp3ve8xn"
-                    className="mt-8 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
+                    className="mt-5 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
                   >
                     segunda opción
                     <ArrowRight aria-hidden="true" className="size-4" />
