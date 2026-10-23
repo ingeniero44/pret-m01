@@ -134,7 +134,7 @@ export function CryaRequest() {
                     </p>
                   </div>
                   <a
-                    href="https://tinyurl.com/yp3ve8xn"
+                    href="https://tinyurl.com/49n393vn"
                     className="mt-5 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
                   >
                     segunda opción
