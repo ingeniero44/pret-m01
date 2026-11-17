@@ -45,7 +45,6 @@ const inputClassName =
 export function CryaRequest() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [amount, setAmount] = useState('')
-  const [birthDate, setBirthDate] = useState('')
   const [selectedState, setSelectedState] = useState('')
   const [isStateMenuOpen, setIsStateMenuOpen] = useState(false)
   const [stateError, setStateError] = useState('')
@@ -168,29 +167,16 @@ export function CryaRequest() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="birth-date" className="text-sm font-medium text-slate-700">Fecha de nacimiento</label>
+                      <label htmlFor="age" className="text-sm font-medium text-slate-700">Edad</label>
                       <input
-                        id="birth-date"
-                        name="birthDate"
-                        type="text"
+                        id="age"
+                        name="age"
+                        type="number"
                         inputMode="numeric"
-                        autoComplete="bday"
-                        placeholder="DD/MM/AAAA"
-                        maxLength={10}
-                        pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                        title="Escribe la fecha en formato DD/MM/AAAA"
-                        value={birthDate}
-                        onChange={(event) => {
-                          const digits = event.target.value.replace(/\D/g, '').slice(0, 8)
-                          const formattedDate = digits.length > 4
-                            ? `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`
-                            : digits.length > 2
-                              ? `${digits.slice(0, 2)}/${digits.slice(2)}`
-                              : digits
-                          setBirthDate(formattedDate)
-                        }}
+                        step="1"
+                        placeholder="Escribe tu edad en años"
                         required
-                        className={`${inputClassName} text-slate-600`}
+                        className={inputClassName}
                       />
                     </div>
 
