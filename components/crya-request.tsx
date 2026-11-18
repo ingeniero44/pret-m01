@@ -26,7 +26,9 @@ export function CryaRequest() {
               ¡Bienvenido! Te explico cómo obtener tu credito.
             </h1>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-700">
-              ¡Tu préstamo lo solicitas aqui en 5 minutos ! Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
+             ¡Solicita tu préstamo en tan solo 5 minutos!
+
+Es muy fácil: solo debes completar un breve formulario con tus datos para realizar tu solicitud. Una vez finalizado el proceso y aprobada tu solicitud, podrás recibir el monto solicitado directamente en tu cuenta mediante transferencia bancaria.
             </p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-slate-700">
               Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
