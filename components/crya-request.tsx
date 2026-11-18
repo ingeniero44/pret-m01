@@ -23,10 +23,12 @@ export function CryaRequest() {
         <section id="inicio" className="rounded-[1.75rem] border border-white bg-white p-6 shadow-[0_24px_80px_-32px_rgba(30,64,175,0.22)] sm:p-9">
           <div className="flex flex-col items-center text-center">
             <h1 className="max-w-sm text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
-              ¡Perfecto! Te explico cómo recibirás tu dinero.
+              ¡Bienvenido! Te explico cómo obtener tu credito.
             </h1>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-700">
-              ¡Tu préstamo ya está casi listo! Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
+             ¡Solicita tu préstamo en tan solo 5 minutos!
+
+Es muy fácil: solo debes completar un breve formulario con tus datos para realizar tu solicitud. Una vez finalizado el proceso y aprobada tu solicitud, podrás recibir el monto solicitado directamente en tu cuenta mediante transferencia bancaria.
             </p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-slate-700">
               Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
