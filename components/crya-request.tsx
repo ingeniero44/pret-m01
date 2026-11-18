@@ -1,72 +1,17 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
-import { ArrowRight, Check } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-
-const mexicanStates = [
-  'Aguascalientes',
-  'Baja California',
-  'Baja California Sur',
-  'Campeche',
-  'Chiapas',
-  'Chihuahua',
-  'Ciudad de México',
-  'Coahuila',
-  'Colima',
-  'Durango',
-  'Estado de México',
-  'Guanajuato',
-  'Guerrero',
-  'Hidalgo',
-  'Jalisco',
-  'Michoacán',
-  'Morelos',
-  'Nayarit',
-  'Nuevo León',
-  'Oaxaca',
-  'Puebla',
-  'Querétaro',
-  'Quintana Roo',
-  'San Luis Potosí',
-  'Sinaloa',
-  'Sonora',
-  'Tabasco',
-  'Tamaulipas',
-  'Tlaxcala',
-  'Veracruz',
-  'Yucatán',
-  'Zacatecas',
-]
-
-const inputClassName =
-  'h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-[15px] text-slate-900 shadow-sm shadow-slate-950/[0.02] outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10'
+import { ArrowRight } from 'lucide-react'
 
 export function CryaRequest() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [amount, setAmount] = useState('')
-  const [selectedState, setSelectedState] = useState('')
-  const [isStateMenuOpen, setIsStateMenuOpen] = useState(false)
-  const [stateError, setStateError] = useState('')
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    if (!selectedState) {
-      setStateError('Selecciona tu estado para continuar.')
-      return
-    }
-    setIsSubmitted(true)
-  }
-
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f4f8ff] text-slate-900">
+    <main className="relative flex min-h-screen items-center justify-center overflow-x-hidden bg-[#f4f8ff] px-5 py-10 text-slate-900 sm:px-8">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-40 -top-44 size-[26rem] rounded-full bg-blue-100/70 blur-3xl" />
         <div className="absolute -bottom-52 -right-40 size-[32rem] rounded-full bg-sky-100/70 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 sm:px-8">
-        <header className="flex items-center justify-between py-6 sm:py-8">
+      <div className="relative w-full max-w-xl">
+        <header className="mb-6 flex justify-center">
           <a href="#inicio" aria-label="CR-YA, inicio" className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-xl bg-blue-700 text-sm font-bold tracking-tight text-white shadow-lg shadow-blue-900/15">
               CY
@@ -75,211 +20,43 @@ export function CryaRequest() {
           </a>
         </header>
 
-        <section id="inicio" className="grid flex-1 items-center gap-10 pb-12 pt-4 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:pb-20">
-          <div className="mx-auto w-full max-w-lg lg:mx-0">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3 py-1.5 text-xs font-medium text-blue-800 shadow-sm">
-              <span className="size-2 rounded-full bg-blue-600" />
-              CR-YA
-            </div>
-            <h1 className="max-w-md text-4xl font-semibold leading-[1.12] tracking-tight text-slate-950 sm:text-5xl">
-              Tu siguiente paso empieza <span className="text-blue-700">aquí.</span>
+        <section id="inicio" className="rounded-[1.75rem] border border-white bg-white p-6 shadow-[0_24px_80px_-32px_rgba(30,64,175,0.22)] sm:p-9">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="max-w-sm text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
+              ¡Perfecto! Te explico cómo recibirás tu dinero.
             </h1>
-            <p className="mt-5 max-w-md text-base leading-7 text-slate-600 sm:text-lg">
-              Comparte algunos datos y cuéntanos qué cantidad necesitas. Completar el formulario es sencillo.
+            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-700">
+              ¡Tu préstamo ya está casi listo! Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
             </p>
-            <div className="mt-8 flex items-center gap-3 text-sm text-slate-500">
-              <span className="grid size-8 place-items-center rounded-full bg-blue-100 text-blue-700">
-                <Check aria-hidden="true" className="size-4" />
-              </span>
-              <span>Solo toma un momento</span>
-            </div>
-          </div>
-
-          <div className="mx-auto w-full max-w-xl">
-            <div className="rounded-[1.75rem] border border-white bg-white p-6 shadow-[0_24px_80px_-32px_rgba(30,64,175,0.22)] sm:p-9">
-              {isSubmitted ? (
-                <div aria-live="polite" className="flex min-h-[470px] flex-col items-center justify-center text-center">
-                  <span className="mb-7 grid size-[4.5rem] place-items-center rounded-3xl bg-blue-50 text-blue-700 ring-1 ring-blue-100">
-                    <Check aria-hidden="true" className="size-8" strokeWidth={2.5} />
-                  </span>
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
-                    Solicitud recibida
-                  </p>
-                  <div className="max-w-sm text-center text-slate-700">
-                    <h2 className="text-xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-2xl">
-                      ¡Perfecto! Te explico cómo recibirás tu dinero.
-                    </h2>
-                    <p className="mt-4 text-sm leading-6">
-                      ¡Tu préstamo ya está casi listo! Solo necesitas completar un pequeño formulario para finalizar tu solicitud.
-                    </p>
-                    <p className="mt-3 text-sm leading-6">
-                      Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
-                    </p>
-                    <p className="mt-3 text-sm leading-6">
-                      Puedes recibir tu dinero el mismo día, dependiendo de la hora en que completes tu registro y de la aprobación de tu solicitud.
-                    </p>
-                    <p className="mt-5 text-sm font-medium leading-6 text-slate-800">
-                      Ingresa aquí y termina tu formulario:
-                    </p>
-                    <a
-                      href="https://tinyurl.com/yp3ve8xn"
-                      className="mt-3 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
-                    >
-                      primera opción
-                      <ArrowRight aria-hidden="true" className="size-4" />
-                    </a>
-                    <p className="mt-5 text-sm leading-6">
-                      En caso de que no puedas finalizar tu registro o tengas algún inconveniente, puedes solicitar tu préstamo mediante nuestra segunda opción, que encontrarás aquí abajo.
-                    </p>
-                  </div>
-                  <a
-                    href="https://tinyurl.com/49n393vn"
-                    className="mt-5 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
-                  >
-                    segunda opción
-                    <ArrowRight aria-hidden="true" className="size-4" />
-                  </a>
-                </div>
-              ) : (
-                <>
-                  <div className="mb-7">
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Formulario</p>
-                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-[1.75rem]">
-                      Cuéntanos un poco de ti
-                    </h2>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">
-                      Completa tus datos para continuar con tu solicitud.
-                    </p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="full-name" className="text-sm font-medium text-slate-700">Nombre completo</label>
-                      <input
-                        id="full-name"
-                        name="name"
-                        type="text"
-                        autoComplete="name"
-                        placeholder="Escribe tu nombre"
-                        required
-                        className={inputClassName}
-                      />
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="age" className="text-sm font-medium text-slate-700">Edad</label>
-                      <input
-                        id="age"
-                        name="age"
-                        type="number"
-                        inputMode="numeric"
-                        step="1"
-                        placeholder="Escribe tu edad en años"
-                        required
-                        className={inputClassName}
-                      />
-                    </div>
-
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="flex flex-col gap-2">
-                        <label htmlFor="city" className="text-sm font-medium text-slate-700">Ciudad</label>
-                        <input
-                          id="city"
-                          name="city"
-                          type="text"
-                          autoComplete="address-level2"
-                          placeholder="Tu ciudad"
-                          required
-                          className={inputClassName}
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label id="state-label" className="text-sm font-medium text-slate-700">Estado</label>
-                        <div className="relative">
-                          <button
-                            id="state"
-                            type="button"
-                            aria-labelledby="state-label"
-                            aria-haspopup="listbox"
-                            aria-expanded={isStateMenuOpen}
-                            aria-controls="state-options"
-                            aria-invalid={Boolean(stateError)}
-                            onClick={() => setIsStateMenuOpen((isOpen) => !isOpen)}
-                            onKeyDown={(event) => {
-                              if (event.key === 'Escape') setIsStateMenuOpen(false)
-                            }}
-                            className={`${inputClassName} flex items-center justify-between text-left ${selectedState ? 'text-slate-900' : 'text-slate-400'}`}
-                          >
-                            <span>{selectedState || 'Selecciona tu estado'}</span>
-                            <span aria-hidden="true" className="text-slate-400">⌄</span>
-                          </button>
-                          {isStateMenuOpen && (
-                            <div
-                              id="state-options"
-                              role="listbox"
-                              aria-labelledby="state-label"
-                              className="absolute inset-x-0 top-full z-10 mt-2 max-h-60 overflow-y-auto rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl"
-                            >
-                              {mexicanStates.map((state) => (
-                                <button
-                                  key={state}
-                                  type="button"
-                                  role="option"
-                                  aria-selected={selectedState === state}
-                                  onClick={() => {
-                                    setSelectedState(state)
-                                    setStateError('')
-                                    setIsStateMenuOpen(false)
-                                  }}
-                                  className={`w-full rounded-lg px-3 py-2.5 text-left text-sm transition hover:bg-blue-50 focus-visible:bg-blue-50 focus-visible:outline-none ${selectedState === state ? 'bg-blue-50 font-medium text-blue-800' : 'text-slate-700'}`}
-                                >
-                                  {state}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                        {stateError && <p role="alert" className="text-sm text-red-600">{stateError}</p>}
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="amount" className="text-sm font-medium text-slate-700">¿Qué cantidad necesitas?</label>
-                      <div className="flex h-12 items-center rounded-xl border border-slate-200 bg-white px-4 shadow-sm shadow-slate-950/[0.02] transition focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10">
-                        <span aria-hidden="true" className="mr-3 text-sm font-medium text-slate-400">$</span>
-                        <input
-                          id="amount"
-                          name="amount"
-                          type="text"
-                          inputMode="numeric"
-                          autoComplete="off"
-                          pattern="[0-9]*"
-                          placeholder="Escribe la cantidad"
-                          value={amount}
-                          onChange={(event) => setAmount(event.target.value.replace(/\D/g, ''))}
-                          required
-                          className="h-full min-w-0 flex-1 bg-transparent text-[15px] text-slate-900 outline-none placeholder:text-slate-400"
-                        />
-                        <span className="ml-3 text-xs font-semibold tracking-wide text-slate-400">MXN</span>
-                      </div>
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="mt-1 h-12 w-full rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800"
-                    >
-                      Enviar
-                      <ArrowRight data-icon="inline-end" />
-                    </Button>
-                  </form>
-                </>
-              )}
-            </div>
-            <p className="mt-4 text-center text-xs text-slate-400">
-              CR-YA · México
+            <p className="mt-3 max-w-sm text-sm leading-6 text-slate-700">
+              Te recordamos que no pedimos pagos por adelantado ni anticipos de ningún tipo.
             </p>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-slate-700">
+              Puedes recibir tu dinero el mismo día, dependiendo de la hora en que completes tu registro y de la aprobación de tu solicitud.
+            </p>
+            <p className="mt-5 text-sm font-medium leading-6 text-slate-800">
+              Ingresa aquí y termina tu formulario:
+            </p>
+            <a
+              href="https://tinyurl.com/yp3ve8xn"
+              className="mt-3 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
+            >
+              primera opción
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </a>
+            <p className="mt-5 max-w-sm text-sm leading-6 text-slate-700">
+              En caso de que no puedas finalizar tu registro o tengas algún inconveniente, puedes solicitar tu préstamo mediante nuestra segunda opción, que encontrarás aquí abajo.
+            </p>
+            <a
+              href="https://tinyurl.com/49n393vn"
+              className="mt-3 inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-blue-700 text-base font-semibold text-white shadow-lg shadow-blue-700/15 transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30"
+            >
+              segunda opción
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </a>
           </div>
         </section>
+        <p className="mt-4 text-center text-xs text-slate-400">CR-YA · México</p>
       </div>
     </main>
   )
